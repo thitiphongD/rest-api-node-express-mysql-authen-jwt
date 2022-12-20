@@ -47,8 +47,8 @@ router.post('/login', loginValidation, function(req, res, next) {
   db.query(`SELECT * FROM users WHERE email = ${db.escape(req.body.email)}`, function(err, result) {
     if (err) {
       res.status(400).json({
-      code: 400,
-      message: err
+        code: 400,
+        message: err
       })
     }
     if (!result.length) {
